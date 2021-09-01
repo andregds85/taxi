@@ -1,7 +1,10 @@
 @extends('layouts3.app')
 @section('content')
 
+<!--
+    https://pt.stackoverflow.com/questions/297342/input-din%C3%A2mico-laravel-js
 
+-->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
@@ -16,7 +19,7 @@ $(document).ready(function () {
         var addto = "#field" + next;
         var addRemove = "#field" + (next);
         next = next + 1;
-        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Nome do Anexo</label> <div class="col-md-12"> <input id="nome-anexo" name="nome-anexo" type="text" placeholder="" class="form-control input-md"> </div></div><br><br><!-- File Button --> <div class="form-group"> <label class="col-md-12 control-label" for="anexo">Anexo</label> <div class="col-md-12"></div></div></div>';
+        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Destino</label> <div class="col-md-12"> <input id="nome-anexo" name="nome-anexo" type="text" placeholder="" class="form-control input-md"> </div></div><br><br><!-- select input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Destino</label> <div class="col-md-12"> <select id="nome-anexo" name="nome-anexo" class="form-control select-md"><option value=""></option><option value="cartao">Cartão</opiton><option value="Dinheiro">Dinheiro</option></select> </div></div><br><br><!-- File Button --> <div class="form-group"> <label class="col-md-12 control-label" for="anexo">Valor</label> <div class="col-md-12"> <input id="anexo" name="anexo" class="input-file" type="text"> </div></div></div>';
         var newInput = $(newIn);
         var removeBtn = '<div class="col-md-12"><button id="remove' + (next - 1) + '" class="btn btn-danger remove-me pull-right" >Remover</button></div></div></div><div id="field">';
         var removeButton = $(removeBtn);
@@ -36,7 +39,6 @@ $(document).ready(function () {
 
 });
 </script>
-
 
 
 
@@ -784,18 +786,26 @@ use App\Http\Controllers\ChecklistController;
 
 
 
-
-
                     <div class="col-xs-12">
   <div class="col-md-12" >
     <div id="field">
       <div id="field0">
         <!-- Text input-->
         <div class="form-group">
-          {!! Form::label('nome-anexo', 'Nome do anexo', ['class' => 'col-md-12 control-label'])!!}
-           </div>
+          {!! Form::label('Destino', 'Nome do anexo', ['class' => 'col-md-12 control-label'])!!}
+          <div class="col-md-12">
+          {!! Form::text('nome-anexo', null, ['class' => 'form-control input-md', 'id' => 'nome-anexo']) !!}
+          </div>
+        </div>
         <br><br>
-
+        <!-- File Button -->
+        <div class="form-group">
+          {!! form::label('Valor', 'Anexo', ['class' => 'col-md-12 control-label']) !!}
+          <div class="col-md-12">
+            {!! Form::file('anexo', ['class' => 'input-file', 'id' => 'anexo']) !!}
+            <div id="action_jsondisplay"></div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -808,8 +818,6 @@ use App\Http\Controllers\ChecklistController;
     <br><br>
   </div>
 </div>
-
-
 
 
 
