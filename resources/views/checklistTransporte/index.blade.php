@@ -19,7 +19,7 @@ $(document).ready(function () {
         var addto = "#field" + next;
         var addRemove = "#field" + (next);
         next = next + 1;
-        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Destino</label> <div class="col-md-12"> <input id="nome-anexo" name="nome-anexo" type="text" placeholder="" class="form-control input-md"> </div></div><br><br><!-- select input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Destino</label> <div class="col-md-12"> <select id="nome-anexo" name="nome-anexo" class="form-control select-md"><option value=""></option><option value="cartao">Cartão</opiton><option value="Dinheiro">Dinheiro</option></select> </div></div><br><br><!-- File Button --> <div class="form-group"> <label class="col-md-12 control-label" for="anexo">Valor</label> <div class="col-md-12"> <input id="anexo" name="anexo" class="input-file" type="text"> </div></div></div>';
+        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Destino</label> <div class="col-md-12"> <input id="destino" name="destino[]" type="text" placeholder="Especificar o Destino" class="form-control input-md"> </div></div><br><br><!-- select input--><div class="form-group"> <label class="col-md-12 control-label" for="tipoPagamento">Forma de Pagamento</label> <div class="col-md-12"> <select id="nome-anexo" name="formPgto" class="form-control select-md"><option value=""></option><option value="cartao">Cartão</opiton><option value="Dinheiro">Dinheiro</option></select> </div></div><br><br><!-- File Button --> <div class="form-group"> <label class="col-md-12 control-label" for="anexo">Valor</label> <div class="col-md-12">  <input type="text"  onkeyup="k(this);" name="valorPgto[]" class="form-control @error('valorPgto') is-invalid @enderror"  onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" /> </div></div></div>';
         var newInput = $(newIn);
         var removeBtn = '<div class="col-md-12"><button id="remove' + (next - 1) + '" class="btn btn-danger remove-me pull-right" >Remover</button></div></div></div><div id="field">';
         var removeButton = $(removeBtn);
@@ -869,7 +869,6 @@ use App\Http\Controllers\ChecklistController;
 
 
         
-
 
 
 
