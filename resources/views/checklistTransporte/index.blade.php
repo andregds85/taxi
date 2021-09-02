@@ -790,22 +790,7 @@ use App\Http\Controllers\ChecklistController;
   <div class="col-md-12" >
     <div id="field">
       <div id="field0">
-        <!-- Text input-->
-        <div class="form-group">
-          {!! Form::label('Destino', 'Nome do anexo', ['class' => 'col-md-12 control-label'])!!}
-          <div class="col-md-12">
-          {!! Form::text('nome-anexo', null, ['class' => 'form-control input-md', 'id' => 'nome-anexo']) !!}
-          </div>
-        </div>
-        <br><br>
-        <!-- File Button -->
-        <div class="form-group">
-          {!! form::label('Valor', 'Anexo', ['class' => 'col-md-12 control-label']) !!}
-          <div class="col-md-12">
-            {!! Form::file('anexo', ['class' => 'input-file', 'id' => 'anexo']) !!}
-            <div id="action_jsondisplay"></div>
-          </div>
-        </div>
+
 
       </div>
     </div>
