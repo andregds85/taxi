@@ -22,7 +22,12 @@ class PainelController extends Controller
     {
       return view('painel.index');
     }
-   
+  
+    
+
+
+
+    
 }
 
 

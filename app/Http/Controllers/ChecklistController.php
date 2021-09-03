@@ -19,14 +19,19 @@ class ChecklistController  extends Controller
 
     public function index()
     {
-            return view('checklistTransporte.index');
+
+       return view('checklistTransporte.index'); 
+
+         /*   return view('checklistTransporte.index'); */
     }
     
+
 
     public function store(Request $request)
     {
         request()->validate([
                
+ 
         ]);    
         Checklist::create($request->all());
         return view('checklistTransporte.index');
@@ -34,6 +39,20 @@ class ChecklistController  extends Controller
 
   
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 

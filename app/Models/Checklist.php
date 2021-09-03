@@ -11,26 +11,20 @@ class checklist extends Model
     protected $table="checklist";
     protected $fillable = [
    
-      'dia',
-      'mes',
-      'ano',
-      'semana',
-      'horaInicial',
-      'horaFinal', 
-      'motorista',
-      'codPlaca',
-      'Kfinal',
-      'Kinicial',
-      'total',
-      'Fbruta',
-      'porcentagem',
-      'comissao',
-      'combustivel',
-      'fliquida', 
-      'tanqueK', 
-      
-   ];
+'dia',
+'mes',
+'ano',
+'semana',
+'motorista',
+'codPlaca',
+'horaInicial',
+'horaFinal',
+'Kfinal',
+'Kinicial',
+'tcombustivel',
+'vCombustivel',
+'outros',
+'Espoutros',
+
+];
 }
-
-
-  

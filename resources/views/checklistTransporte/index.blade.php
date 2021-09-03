@@ -1,6 +1,7 @@
 @extends('layouts3.app')
 @section('content')
 
+
 <!--
     https://pt.stackoverflow.com/questions/297342/input-din%C3%A2mico-laravel-js
 
@@ -19,7 +20,7 @@ $(document).ready(function () {
         var addto = "#field" + next;
         var addRemove = "#field" + (next);
         next = next + 1;
-        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Destino</label> <div class="col-md-12"> <input id="destino" name="destino[]" type="text" placeholder="Especificar o Destino" class="form-control input-md"> </div></div><br><br><!-- select input--><div class="form-group"> <label class="col-md-12 control-label" for="tipoPagamento">Forma de Pagamento</label> <div class="col-md-12"> <select id="nome-anexo" name="formPgto" class="form-control select-md"><option value=""></option><option value="cartao">Cartão</opiton><option value="Dinheiro">Dinheiro</option></select> </div></div><br><br><!-- File Button --> <div class="form-group"> <label class="col-md-12 control-label" for="anexo">Valor</label> <div class="col-md-12">  <input type="text"  onkeyup="k(this);" name="valorPgto[]" class="form-control @error('valorPgto') is-invalid @enderror"  onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" /> </div></div></div>';
+        var newIn = ' <div id="field'+ next +'" name="field'+ next +'"><!-- Text input--><div class="form-group"> <label class="col-md-12 control-label" for="nome-anexo">Destino</label> <div class="col-md-12"> <input id="destino" name="fields[]" type="text" placeholder="Especificar o Destino" class="form-control input-md"> </div></div><br><br><!-- select input--><div class="form-group"> <label class="col-md-12 control-label" for="tipoPagamento">Forma de Pagamento</label> <div class="col-md-12"> <select id="nome-anexo" name="formPgto" class="form-control select-md"><option value=""></option><option value="cartao">Cartão</opiton><option value="Dinheiro">Dinheiro</option></select> </div></div><br><br><!-- File Button --> <div class="form-group"> <label class="col-md-12 control-label" for="anexo">Valor</label> <div class="col-md-12">  <input type="text"  onkeyup="k(this);" name="valorPgto[]" class="form-control @error('valorPgto') is-invalid @enderror"  onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57" /> </div></div></div>';
         var newInput = $(newIn);
         var removeBtn = '<div class="col-md-12"><button id="remove' + (next - 1) + '" class="btn btn-danger remove-me pull-right" >Remover</button></div></div></div><div id="field">';
         var removeButton = $(removeBtn);
@@ -39,6 +40,20 @@ $(document).ready(function () {
 
 });
 </script>
+
+<?php 
+
+
+$destino[] = array();
+$formPgt[] = array();
+
+
+
+
+?>
+
+
+
 
 
 
@@ -572,9 +587,7 @@ use App\Http\Controllers\ChecklistController;
                         </div>
                      <br>                     
   
-
-        
-                    
+                   
                                                                   
                     <!--  Ano -->
                     <div class="form-group row" required>
@@ -784,8 +797,6 @@ use App\Http\Controllers\ChecklistController;
 					</div>
 
 
-
-
                     <div class="col-xs-12">
   <div class="col-md-12" >
     <div id="field">
@@ -803,37 +814,6 @@ use App\Http\Controllers\ChecklistController;
     <br><br>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -876,7 +856,7 @@ use App\Http\Controllers\ChecklistController;
 
 
 
-
+            
 
 
 
